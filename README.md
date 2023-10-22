@@ -1,7 +1,28 @@
 ## Riassunto personale
+- utilizzare l'esempio nella directory `examples/basic_thread_border_router`. Questo esempio è destinato alla `scheda embedded border router di espressif`. La scheda è composta da un `Soc esp32-s3 (WIFI support)` e un `esp32-h2 (THREAD support)`.
+- plug usb nella usb port dell'esp32-s3 (USB2).
+- apri progetto con vscode
+- seleziona scheda `esp32-s3` e poi seleziona JTAG (seconda opzione disponibile) oppure UART (prima opzione disponibile).
+- seleziona flash method (icona stella) e seleziona UART
+- configura variabili dell'sdk (premi rotella oppure cerca \> menuconfig). Ecco le variabili da configurare (fare particolare attenzione a CONFIG_OPENTHREAD_BR_AUTO_UPDATE_RCP, consiglio di disattivare le variabili utilizzando menuconfig e NON modificando manualmente sdkconfig):
+```
+CONFIG_EXAMPLE_WIFI_SSID="xxx"
+CONFIG_EXAMPLE_WIFI_PASSWORD="xxx"
+CONFIG_EXAMPLE_WIFI_CONN_MAX_RETRY=1000
 
+# CONFIG_OPENTHREAD_BR_AUTO_UPDATE_RCP is not set (ho dovuto disattivarlo altrimenti non buildava!!!)
+# CONFIG_OPENTHREAD_BR_CREATE_OTA_IMAGE is not set
+CONFIG_OPENTHREAD_BR_AUTO_START=y # avvia in automatico br con wifi configurato
+CONFIG_OPENTHREAD_BR_START_WEB=y # avvia web server di debug
+```
+- build, flash e apri il monitor seriale per inviare comandi via CLI (es ping 192.168.1.84).
+- carica il codice `ot_cli` negli altri `esp32-c6` oppure `esp32-h2` e osserva come joinano il thread network da web server o via nmap.
+### Note sul Web server
+se vuoi visualizzare il web server devi digitare nel browser `192.168.1.X/index.html`, se lo scrivi senza *index.html* restituisce 404. Per trovare il dispositivo espressif usa `nmap -sP 192.168.1.0/24`
 
+![aff](https://github.com/AlessandroBonomo28/esp-thread-br/assets/75626033/d4b7ce8b-7faa-467b-8c2e-2621e4a530d5)
 
+![status](https://github.com/AlessandroBonomo28/esp-thread-br/assets/75626033/33099fa8-bc60-4224-a6fc-e91b680b0cb9)
 
 
 # ESP Thread Boarder Router SDK
