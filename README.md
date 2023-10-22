@@ -24,6 +24,7 @@ se vuoi visualizzare il web server devi digitare nel browser `192.168.1.X/index.
 
 ![status](https://github.com/AlessandroBonomo28/esp-thread-br/assets/75626033/33099fa8-bc60-4224-a6fc-e91b680b0cb9)
 
+![WhatsApp Image 2023-10-22 at 20 45 02](https://github.com/AlessandroBonomo28/esp-thread-br/assets/75626033/983d40f0-ec22-4afe-8ed4-f8631c94f1cb)
 
 # ESP Thread Boarder Router SDK
 
