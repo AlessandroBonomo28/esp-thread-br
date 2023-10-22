@@ -2,7 +2,7 @@
 - utilizzare l'esempio nella directory `examples/basic_thread_border_router`. Questo esempio è destinato alla `scheda embedded border router di espressif`. La scheda è composta da un `Soc esp32-s3 (WIFI support)` e un `esp32-h2 (THREAD support)`.
 - plug usb nella usb port dell'esp32-s3 (USB2).
 - apri progetto con vscode
-- seleziona scheda `esp32-s3` e poi seleziona JTAG (seconda opzione disponibile) oppure UART (prima opzione disponibile).
+- seleziona scheda `esp32-s3` e poi seleziona JTAG (seconda opzione disponibile) oppure ESP-PROG (prima opzione disponibile).
 - seleziona flash method (icona stella) e seleziona UART
 - configura variabili dell'sdk (premi rotella oppure cerca \> menuconfig). Ecco le variabili da configurare (fare particolare attenzione a CONFIG_OPENTHREAD_BR_AUTO_UPDATE_RCP, consiglio di disattivare le variabili utilizzando menuconfig e NON modificando manualmente sdkconfig):
 ```
